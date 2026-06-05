@@ -3,13 +3,17 @@ import faiss
 import pickle
 import numpy as np
 import random
-import os
 from sentence_transformers import SentenceTransformer
 import google.generativeai as genai
 
-# Gemini API Key
-genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
+st.set_page_config(
+    page_title="Kanishk's UPSC AI Mentor",
+    page_icon="🇮🇳",
+    layout="wide"
+)
 
+# Gemini API Key from Streamlit Secrets
+genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 gemini = genai.GenerativeModel("gemini-2.5-flash")
 
 # Load model and data
@@ -18,13 +22,6 @@ index = faiss.read_index("upsc_index.faiss")
 
 with open("chunks.pkl", "rb") as f:
     chunks = pickle.load(f)
-
-# Page settings
-st.set_page_config(
-    page_title="Kanishk's UPSC AI Mentor",
-    page_icon="🇮🇳",
-    layout="wide"
-)
 
 # Custom CSS
 st.markdown("""
@@ -203,50 +200,13 @@ Question:
 
 Answer:
 """
-if ask_button and question:
-    with st.spinner("Searching NCERT books and preparing your UPSC answer..."):
-        q_embedding = model.encode([question])
-
-        D, I = index.search(
-            np.array(q_embedding),
-            k=3
-        )
-
-        context = ""
-
-        for idx in I[0]:
-            context += chunks[idx][:600] + "\n\n"
-
-        prompt = f"""
-You are an expert UPSC mentor.
-
-Use only the provided NCERT context.
-
-Give the answer in this format:
-1. Definition
-2. Key Points
-3. UPSC Exam Relevance
-4. Short Conclusion
-
-Context:
-{context}
-
-Question:
-{question}
-
-Answer:
-"""
 
         try:
             response = gemini.generate_content(prompt)
             answer = response.text
 
         except Exception as e:
-            answer = """
-⚠️ Gemini quota limit reached or temporary API issue.
-
-Please try again after a few minutes.
-"""
+            answer = f"ERROR: {str(e)}"
 
     st.subheader("📚 UPSC Mentor's Answer")
     st.markdown(
@@ -256,6 +216,7 @@ Please try again after a few minutes.
 
 elif ask_button and not question:
     st.error("Please enter a UPSC question first.")
+
 # Footer
 st.markdown("""
 <hr>

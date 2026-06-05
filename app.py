@@ -14,7 +14,7 @@ st.set_page_config(
 
 # Gemini API Key from Streamlit Secrets
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-gemini = genai.GenerativeModel("gemini-2.5-flash")
+gemini = genai.GenerativeModel("gemini-2.5-flash-lite")
 
 # Load model and data
 model = SentenceTransformer("all-MiniLM-L6-v2")

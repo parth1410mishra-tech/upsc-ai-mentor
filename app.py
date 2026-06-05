@@ -211,23 +211,22 @@ Answer:
             answer = f"ERROR: {str(e)}"
 
     st.subheader("📚 UPSC Mentor's Answer")
-st.markdown(
-    f'''
-    <div class="answer-box">
-    <pre style="
-        white-space: pre-wrap;
-        color:#111827;
-        font-size:18px;
-        font-family:Arial,sans-serif;
-    ">{answer}</pre>
-    </div>
-    ''',
-    unsafe_allow_html=True
-)
+    st.markdown(
+        f'''
+        <div class="answer-box">
+        <pre style="
+            white-space: pre-wrap;
+            color:#111827;
+            font-size:18px;
+            font-family:Arial,sans-serif;
+        ">{answer}</pre>
+        </div>
+        ''',
+        unsafe_allow_html=True
+    )
 
 elif ask_button and not question:
     st.error("Please enter a UPSC question first.")
-
 # Footer
 st.markdown("""
 <hr>

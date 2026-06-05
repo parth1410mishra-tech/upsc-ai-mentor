@@ -64,11 +64,13 @@ st.markdown("""
 
 .answer-box {
     background: #ffffff;
+    color: #111827;
     padding: 25px;
     border-left: 6px solid #2563eb;
     border-radius: 12px;
-    font-size: 17px;
-    line-height: 1.7;
+    font-size: 18px;
+    line-height: 1.8;
+    font-weight: 500;
 }
 
 .footer {
@@ -209,10 +211,19 @@ Answer:
             answer = f"ERROR: {str(e)}"
 
     st.subheader("📚 UPSC Mentor's Answer")
-    st.markdown(
-        f'<div class="answer-box">{answer}</div>',
-        unsafe_allow_html=True
-    )
+st.markdown(
+    f'''
+    <div class="answer-box">
+    <pre style="
+        white-space: pre-wrap;
+        color:#111827;
+        font-size:18px;
+        font-family:Arial,sans-serif;
+    ">{answer}</pre>
+    </div>
+    ''',
+    unsafe_allow_html=True
+)
 
 elif ask_button and not question:
     st.error("Please enter a UPSC question first.")

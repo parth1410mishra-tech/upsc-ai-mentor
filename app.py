@@ -176,13 +176,46 @@ if ask_button and question:
 
         D, I = index.search(
             np.array(q_embedding),
-            k=5
+            k=3
         )
 
         context = ""
 
         for idx in I[0]:
-            context += chunks[idx] + "\n\n"
+            context += chunks[idx][:600] + "\n\n"
+
+        prompt = f"""
+You are an expert UPSC mentor.
+
+Use only the provided NCERT context.
+
+Give the answer in this format:
+1. Definition
+2. Key Points
+3. UPSC Exam Relevance
+4. Short Conclusion
+
+Context:
+{context}
+
+Question:
+{question}
+
+Answer:
+"""
+if ask_button and question:
+    with st.spinner("Searching NCERT books and preparing your UPSC answer..."):
+        q_embedding = model.encode([question])
+
+        D, I = index.search(
+            np.array(q_embedding),
+            k=3
+        )
+
+        context = ""
+
+        for idx in I[0]:
+            context += chunks[idx][:600] + "\n\n"
 
         prompt = f"""
 You are an expert UPSC mentor.
@@ -204,17 +237,25 @@ Question:
 Answer:
 """
 
-        response = gemini.generate_content(prompt)
+        try:
+            response = gemini.generate_content(prompt)
+            answer = response.text
+
+        except Exception as e:
+            answer = """
+⚠️ Gemini quota limit reached or temporary API issue.
+
+Please try again after a few minutes.
+"""
 
     st.subheader("📚 UPSC Mentor's Answer")
     st.markdown(
-        f'<div class="answer-box">{response.text}</div>',
+        f'<div class="answer-box">{answer}</div>',
         unsafe_allow_html=True
     )
 
 elif ask_button and not question:
     st.error("Please enter a UPSC question first.")
-
 # Footer
 st.markdown("""
 <hr>

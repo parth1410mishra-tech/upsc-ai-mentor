@@ -24,6 +24,20 @@ https://github.com/parth1410mishra-tech/upsc-ai-mentor
 - Google Gemini API
 - NumPy
 
+## 📂 Project Structure
+
+```text
+upsc-ai-mentor/
+│── app.py
+│── requirements.txt
+│── chunks.pkl
+│── upsc_index.faiss
+│── README.md
+│── .streamlit/
+│── images/
+```
+
+
 ## ✨ Features
 
 - 📖 NCERT-based answers

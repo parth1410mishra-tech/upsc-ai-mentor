@@ -1,6 +1,11 @@
 # 🇮🇳 AI-Powered UPSC Mentor
 
 An AI-powered UPSC learning assistant built using **Retrieval-Augmented Generation (RAG)**. It retrieves relevant information from NCERT books using semantic search and generates context-aware answers with Google Gemini.
+![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-red?logo=streamlit)
+![FAISS](https://img.shields.io/badge/FAISS-Vector%20Database-green)
+![Gemini](https://img.shields.io/badge/Google-Gemini_API-orange)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ## 🚀 Live Demo
 

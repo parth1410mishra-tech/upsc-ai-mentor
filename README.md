@@ -27,6 +27,17 @@ https://github.com/parth1410mishra-tech/upsc-ai-mentor
 - 🔍 Semantic search using FAISS
 - 🇮🇳 Designed for UPSC preparation
 
+## 🎯 Skills Demonstrated
+
+- Retrieval-Augmented Generation (RAG)
+- Large Language Model (LLM) Integration
+- Semantic Search
+- Vector Database (FAISS)
+- Prompt Engineering
+- Streamlit Web Application Development
+- Google Gemini API Integration
+- Python Programming
+
 ## 📸 Project Demo
 
 ![Project Demo](Screenshot%202026-06-30%20172059.png)

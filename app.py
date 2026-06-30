@@ -7,7 +7,7 @@ from sentence_transformers import SentenceTransformer
 import google.generativeai as genai
 
 st.set_page_config(
-    page_title="Kanishk's UPSC AI Mentor",
+    page_title="AI-Powered UPSC Mentor",
     page_icon="🇮🇳",
     layout="wide"
 )
@@ -84,7 +84,7 @@ st.markdown("""
 # Header
 st.markdown("""
 <div class="main-title">
-🇮🇳 Kanishk's UPSC AI Mentor
+🇮🇳 AI-Powered UPSC Mentor
 </div>
 """, unsafe_allow_html=True)
 
@@ -97,7 +97,7 @@ Your journey to the Civil Services starts today
 # Welcome card
 st.markdown("""
 <div class="welcome-card">
-<h2>Welcome, Kanishk 🇮🇳</h2>
+<h2>Welcome to UPSC AI Mentor 🇮🇳</h2>
 
 <p style="font-size:20px;">
 Every chapter you complete today is an investment in your future as a Civil Servant.
@@ -137,7 +137,7 @@ st.success("🌟 Today's Motivation: " + random.choice(quotes))
 
 # Personal message
 st.info("""
-🌟 Dear Kanishk,
+🌟 Dear Aspirant,
 
 The road to UPSC is long, but every successful officer once sat where you are today.
 
@@ -231,8 +231,8 @@ elif ask_button and not question:
 st.markdown("""
 <hr>
 <div class="footer">
-<h4>🇮🇳 Kanishk's UPSC AI Mentor</h4>
-<p>Built with dedication for a future Civil Servant</p>
+<h4>🇮🇳 AI-Powered UPSC Mentor</h4>
+<p>Built to support UPSC aspirants with AI-powered learning</p>
 <p>Dream • Study • Serve India</p>
 </div>
 """, unsafe_allow_html=True)

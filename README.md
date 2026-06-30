@@ -67,6 +67,16 @@ AI-Generated UPSC Answer
 
 ![Project Demo](Screenshot%202026-06-30%20172059.png)
 
+## 🚀 Future Improvements
+
+- 🎙️ Voice-based question answering
+- 📄 Upload custom study material (PDF support)
+- 🌐 Multilingual support (Hindi & English)
+- 👤 User authentication and personalized dashboards
+- 📊 Learning progress tracking
+- 📝 AI-generated practice quizzes
+- ⭐ Bookmark and revise important topics
+
 ## 👨‍💻 Author
 
 **Parth Achyut Mishra**

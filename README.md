@@ -38,6 +38,31 @@ https://github.com/parth1410mishra-tech/upsc-ai-mentor
 - Google Gemini API Integration
 - Python Programming
 
+## 🏗️ Project Architecture
+
+```text
+User
+   │
+   ▼
+Streamlit Web Interface
+   │
+   ▼
+Question Embedding
+(Sentence Transformers)
+   │
+   ▼
+FAISS Vector Database
+   │
+   ▼
+Relevant NCERT Context Retrieved
+   │
+   ▼
+Google Gemini API
+   │
+   ▼
+AI-Generated UPSC Answer
+```
+
 ## 📸 Project Demo
 
 ![Project Demo](Screenshot%202026-06-30%20172059.png)
